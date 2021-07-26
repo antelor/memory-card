@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const Card = ( {id, img, clicked} ) => {
+const Card = ({ cid, cimg, cclicked }) => {
+    const [id, setId] = useState(cid);
+    const [img, setImg] = useState(cimg);
+    const [clicked, setClicked] = useState(cclicked);
+
     return (
         <div>
-            id: {id}, img: {img}, {clicked}
+            id: {id} , img: {img}
         </div>
   );
 }

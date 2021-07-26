@@ -5,8 +5,8 @@ const Gameboard = ( {cards} ) => {
     return (
         <div>
             Cancha:
-            {cards.map( (item, index, arr) => 
-                <Card id={item.id} img={item.img} clicked={item.clicked} />
+            {cards.map((item, index, arr) =>
+                <Card cid={item.id} cimg={item.img} cclicked={item.clicked} />
             )}
         </div>
   );
