@@ -4,8 +4,8 @@ const Scoreboard = ({ score, hiscore }) => {
     
     return (
         <div id="scoreboard">
-            Score: {score}
-            Hiscore: {hiscore}
+            Score: {score} -
+            Hi score: {hiscore}
         </div>
   );
 }
