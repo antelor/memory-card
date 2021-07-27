@@ -21,6 +21,11 @@ const App = (props) => {
       id: 2,
       img: 'c',
       clicked: false,
+    },
+    {
+      id: 3,
+      img: 'c',
+      clicked: false,
     }
   ]);
 
@@ -87,6 +92,9 @@ const App = (props) => {
 
   return (
     <div>
+      <div class="title">
+        Memory Game
+      </div>
       <Scoreboard score={score} hiscore={hiscore}/>
       <Gameboard cards={cards} clickCard={clickCard} setCards={setCards}/>
     </div>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from './Card.js';
+import '../styles/Gameboard.css';
 
 const Gameboard = ({ cards, clickCard, setCards }) => {
 
     return (
-        <div>
-            Cancha:
+        <div class="gameboard">
             {cards
                 //shuffle
                 .map((value) => ({ value, sort: Math.random() }))

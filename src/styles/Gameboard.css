@@ -1,0 +1,9 @@
+.gameboard{
+    display:flex;
+    padding:1em;
+}
+
+.gameboard button{
+    margin:1em;
+    padding:4em;
+}
