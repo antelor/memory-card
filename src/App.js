@@ -40,6 +40,7 @@ const App = (props) => {
   
   let lose = () => {
     console.log('perdiste');
+    reset();
   }
 
   let playCheck = (newCards, id) => {
@@ -58,7 +59,9 @@ const App = (props) => {
           newCards[i].clicked = true;
 
           setScore(score => score + 1);
-          setHiscore(score => score + 1);
+          if (score+1 > hiscore) {
+            setHiscore(score + 1);
+          }
 
           setCards([...newCards]);
           break;
@@ -69,6 +72,7 @@ const App = (props) => {
 
   let win = () => {
     console.log('ganaste');
+    reset();
   }
 
   let winCheck = (newCards) => {
@@ -86,9 +90,12 @@ const App = (props) => {
     }
   }
 
-  useEffect(() => {
-      setScore(score);
-  }, [score]);
+  let reset = () => {
+    let newCards = cards;
+    for (let i = 0; i < newCards.length; i++) {
+      newCards[i].clicked = false;
+    }
+  }
 
   return (
     <div>
