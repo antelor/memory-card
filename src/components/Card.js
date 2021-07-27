@@ -8,7 +8,6 @@ const Card = ({ cid, cimg, cclicked, clickCard }) => {
     /*This option is equal to a componentDidMount lifecycle method, 
     meaning the hook runs one time when the component mounts (is inserted in the DOM tree)*/
     useEffect(() => {
-        // listener
         window.addEventListener("click", clickCard);
         setId(cid);
 

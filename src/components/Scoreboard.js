@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const Scoreboard = ( {score, hiscore} ) => {
+const Scoreboard = ({ score, hiscore }) => {
 
+    
+    
     return (
-      
-        <div>
+        <div id="scoreboard">
             Score: {score}
             Hiscore: {hiscore}
         </div>

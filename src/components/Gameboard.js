@@ -3,10 +3,6 @@ import Card from './Card.js';
 
 const Gameboard = ({ cards, clickCard, setCards }) => {
 
-    useEffect(() => {
-        setCards(cards);
-    }, [cards]);
-
     return (
         <div>
             Cancha:

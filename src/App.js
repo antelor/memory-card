@@ -26,22 +26,68 @@ const App = (props) => {
 
   let clickCard = (e) => {
     let newCards = cards;
-    for (let i = 0; i < newCards.length; i++){
-      if (newCards[i].id == e.target.id) {
-        newCards[i].clicked = true;
-        newCards[i].id = '5';
-      }
-    }
 
-    setCards([...newCards]);
-    console.log(cards);
+    playCheck(newCards, e.target.id);
+
+    winCheck(newCards);
+    
   }
   
-  
+  let lose = () => {
+    console.log('perdiste');
+  }
+
+  let playCheck = (newCards, id) => {
+    for (let i = 0; i < newCards.length; i++) {
+      //si la carta es la que clickeamos
+      if (newCards[i].id == id) {
+        //la carta ya habia sido clickeada
+        if (newCards[i].clicked == true) {
+          setScore(0);
+
+          lose();
+          break;
+        }
+        //la carta no habia sido clickeada
+        if (newCards[i].clicked == false) {
+          newCards[i].clicked = true;
+
+          setScore(score => score + 1);
+          setHiscore(score => score + 1);
+
+          setCards([...newCards]);
+          break;
+        }
+      }
+    }
+  }
+
+  let win = () => {
+    setScore(0);
+    console.log('ganaste');
+  }
+
+  let winCheck = (newCards) => {
+    let clickCount = 0;
+    //si todas las cartas fueron clickeadas
+    for (let i = 0; i < newCards.length; i++) {
+      if (newCards[i].clicked == true) {
+        clickCount++;
+      }
+    }
+    
+    if (clickCount == newCards.length) {
+      win();
+    }
+  }
+
+  useEffect(() => {
+      setScore(score);
+  }, [score]);
 
   return (
     <div>
-      <Scoreboard score={score} hiscore={hiscore} />
+      <Scoreboard score={score} hiscore={hiscore}/>
       <Gameboard cards={cards} clickCard={clickCard} setCards={setCards}/>
     </div>
   );
