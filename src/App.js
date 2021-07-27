@@ -63,7 +63,6 @@ const App = (props) => {
   }
 
   let win = () => {
-    setScore(0);
     console.log('ganaste');
   }
 
@@ -77,6 +76,7 @@ const App = (props) => {
     }
     
     if (clickCount == newCards.length) {
+      setScore(0);
       win();
     }
   }

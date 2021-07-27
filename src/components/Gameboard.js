@@ -6,7 +6,11 @@ const Gameboard = ({ cards, clickCard, setCards }) => {
     return (
         <div>
             Cancha:
-            {cards.map((item, index, arr) =>
+            {cards
+                .map((value) => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value)
+                .map((item, index, arr) =>
                 <Card cid={item.id} cimg={item.img} cclicked={item.clicked} clickCard={clickCard}/>
             )}
         </div>
