@@ -9,7 +9,7 @@ const Gameboard = ({ cards, clickCard, setCards }) => {
             {cards
                 //mapeo para display
                 .map((item, index, arr) =>
-                <Card cid={item.id} cimg={item.img} cclicked={item.clicked} clickCard={clickCard}/>
+                <Card cid={item.id} cimg={item.img} cclicked={item.clicked} cname={item.name} clickCard={clickCard}/>
             )}
         </div>
   );

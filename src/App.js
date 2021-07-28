@@ -11,21 +11,25 @@ const App = (props) => {
       id: 0,
       img: './images/sushi.png',
       clicked: false,
+      name: 'Sushi',
     },
     {
       id: 1,
       img: './images/chicken-rice.png',
       clicked: false,
+      name: 'Chicken rice',
     },
     {
       id: 2,
       img: './images/crawfish.png',
       clicked: false,
+      name: 'Crawfish',
     },
     {
       id: 3,
       img: './images/hotpot.jpg',
       clicked: false,
+      name: 'Hotpot',
     }
   ]);
 
@@ -66,7 +70,7 @@ const App = (props) => {
           if (score+1 > hiscore) {
             setHiscore(score + 1);
           }
-          
+
           setCards([]);
           setCards([...newCards]);
           break;
