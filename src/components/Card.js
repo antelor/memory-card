@@ -7,14 +7,16 @@ const Card = ({ cid, cimg, cclicked, clickCard }) => {
 
     useEffect(() => {
         window.addEventListener("click", clickCard);
+        setClicked(cclicked);
 
         return () => {
             window.removeEventListener("click", clickCard);
         };
-    });
+    }, [cclicked]);
 
     return (
         <div>
+            {id}
             <img id={id} src={img.default} width='100px'/>
         </div>
   );

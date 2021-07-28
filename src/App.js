@@ -32,9 +32,14 @@ const App = (props) => {
   let clickCard = (e) => {
     let newCards = cards;
 
-    playCheck(newCards, e.target.id);
-
-    winCheck(newCards);
+    newCards = newCards
+      .map((value) => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+      
+      playCheck(newCards, e.target.id);
+      
+      winCheck(newCards);
   }
   
   let lose = () => {
@@ -61,7 +66,8 @@ const App = (props) => {
           if (score+1 > hiscore) {
             setHiscore(score + 1);
           }
-
+          
+          setCards([]);
           setCards([...newCards]);
           break;
         }
