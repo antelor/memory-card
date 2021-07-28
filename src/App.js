@@ -30,7 +30,44 @@ const App = (props) => {
       img: './images/hotpot.jpg',
       clicked: false,
       name: 'Hotpot',
-    }
+    },
+    {
+      id: 4,
+      img: './images/matcha.jpg',
+      clicked: false,
+      name: 'Matcha',
+    },
+    {
+      id: 5,
+      img: './images/ramen.jpg',
+      clicked: false,
+      name: 'Ramen',
+    },
+    {
+      id: 6,
+      img: './images/steak.png',
+      clicked: false,
+      name: 'Steak',
+    },
+    {
+      id: 7,
+      img: './images/takoyaki.jpg',
+      clicked: false,
+      name: 'Takoyaki',
+    },
+    {
+      id: 8,
+      img: './images/boba.jpg',
+      clicked: false,
+      name: 'Boba',
+    },
+    {
+      id: 9,
+      img: './images/dimsum.jpg',
+      clicked: false,
+      name: 'Dimsum',
+    },
+
   ]);
 
   let clickCard = (e) => {
