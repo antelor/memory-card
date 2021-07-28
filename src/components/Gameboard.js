@@ -5,7 +5,7 @@ import '../styles/Gameboard.css';
 const Gameboard = ({ cards, clickCard, setCards }) => {
 
     return (
-        <div class="gameboard">
+        <div className="gameboard">
             {cards
                 //shuffle
                 .map((value) => ({ value, sort: Math.random() }))

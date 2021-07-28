@@ -9,22 +9,22 @@ const App = (props) => {
   const [cards, setCards] = useState([
     {
       id: 0,
-      img: 'a',
+      img: './images/sushi.png',
       clicked: false,
     },
     {
       id: 1,
-      img: 'b',
+      img: './images/chicken-rice.png',
       clicked: false,
     },
     {
       id: 2,
-      img: 'c',
+      img: './images/crawfish.png',
       clicked: false,
     },
     {
       id: 3,
-      img: 'c',
+      img: './images/hotpot.jpg',
       clicked: false,
     }
   ]);
@@ -35,27 +35,26 @@ const App = (props) => {
     playCheck(newCards, e.target.id);
 
     winCheck(newCards);
-    
   }
   
   let lose = () => {
     console.log('perdiste');
     reset();
   }
-
+  
   let playCheck = (newCards, id) => {
     for (let i = 0; i < newCards.length; i++) {
       //si la carta es la que clickeamos
       if (newCards[i].id == id) {
         //la carta ya habia sido clickeada
-        if (newCards[i].clicked == true) {
+        if (newCards[i].clicked === true) {
           setScore(0);
 
           lose();
           break;
         }
         //la carta no habia sido clickeada
-        if (newCards[i].clicked == false) {
+        if (newCards[i].clicked === false) {
           newCards[i].clicked = true;
 
           setScore(score => score + 1);
@@ -79,12 +78,12 @@ const App = (props) => {
     let clickCount = 0;
     //si todas las cartas fueron clickeadas
     for (let i = 0; i < newCards.length; i++) {
-      if (newCards[i].clicked == true) {
+      if (newCards[i].clicked === true) {
         clickCount++;
       }
     }
     
-    if (clickCount == newCards.length) {
+    if (clickCount === newCards.length) {
       setScore(0);
       win();
     }
@@ -99,7 +98,7 @@ const App = (props) => {
 
   return (
     <div>
-      <div class="title">
+      <div className="title">
         Memory Game
       </div>
       <Scoreboard score={score} hiscore={hiscore}/>
